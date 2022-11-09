@@ -107,7 +107,7 @@ productos.forEach((product)=>{
 // .then (response=> response.json())
 // .then (data => {
 //     console.log(data);
-//     productos(data)
+//     renderProductos (data);
 // })
 // .catch(err=>console.log(err))
 
