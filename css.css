@@ -187,7 +187,10 @@ body {
     display: none;
 }
 
-.sumar .restar {
+.sumar {
     cursor: pointer;
 }
 
+.restar {
+    cursor: pointer;
+}

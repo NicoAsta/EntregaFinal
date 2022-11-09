@@ -24,42 +24,39 @@ const pintarCarrito = () => {
         let carritoContent = document.createElement("div");
     carritoContent.className = "modal-content";
     carritoContent.innerHTML = `
-        <img src="${product.img}>
+        <img src="${product.img}">
         <h3>${product.nombre} </h3>
         <p> ${product.precio} $ </p>
-        <span> class= "restar"> - </span>
+        <span class= "restar"> - </span>
         <p> Cantidad: ${product.cantidad} </p>
-        
+        <span class= "sumar"> + </span>
         <p> Total: ${product.cantidad * product.precio} </p>
 
         <button> comprar </button>
 
-        
-        
     `;
-// No se por que no me deja agregar el span sumar 
-// <span> class= "sumar"> + </span>
+
 
     modalContainer.append(carritoContent);
 
-    // let restar = carritoContent.querySelector (".restar");
+    let restar = carritoContent.querySelector (".restar");
 
-    // restar.addEventListener("click",() => {
-    //     if (product.cantidad !== 1){
-    //     product.cantidad--;
-    //     }
-    //     saveLocal();
-    //     pintarCarrito();
-    // })
+    restar.addEventListener("click",() => {
+        if (product.cantidad !== 1){
+        product.cantidad--;
+        }
+        saveLocal();
+        pintarCarrito();
+    })
 
 
-    // let sumar = carritoContent.querySelector(".sumar");
+    let sumar = carritoContent.querySelector(".sumar");
 
-    // sumar.addEventListener("click", () => {
-    //     product.cantidad++;
-    //     saveLocal();
-    //     pintarCarrito();
-    // })
+    sumar.addEventListener("click", () => {
+        product.cantidad++;
+        saveLocal();
+        pintarCarrito();
+    })
 
     let eliminar = document.createElement("span");
     eliminar.innerText = "❌";
@@ -67,7 +64,8 @@ const pintarCarrito = () => {
     carritoContent.append(eliminar);
 
         eliminar.addEventListener("click", eliminarProducto);
-    });
+    }
+    );
 
 
    

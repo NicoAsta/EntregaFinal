@@ -26,6 +26,7 @@ productos.forEach((product)=>{
     <h3> ${product.nombre}</h3>
     <p class="price"> ${product.precio} $ </p>
     `;
+    
 
     shopContent.append(content);
 
@@ -64,3 +65,49 @@ productos.forEach((product)=>{
     });
 
 });
+
+//Promesa
+
+// const hacerPedido = () => {
+//     return new Promise ((resolve, reject) => {
+        
+//             resolve(productos)
+//         }
+//     )
+// }
+
+// let productos = []
+// const renderProductos = (arr) => {
+//     let html;
+//     for (const item of arr) {
+//         const {id, img, nombre, precio, cantidad} = item;
+
+//         html `<div class= "modal-content"
+//         <img src="${product.img}">
+//         <h3>${product.nombre} </h3>
+//         <p> ${product.precio} $ </p>
+//         <span class= "restar"> - </span>
+//         <p> Cantidad: ${product.cantidad} </p>
+//         <span class= "sumar"> + </span>
+//         <p> Total: ${product.cantidad * product.precio} </p>
+
+//         <button> comprar </button> </div>` 
+//     }
+// }
+
+// pedirProductos().then((res)=> {
+//     productos= res;
+//     renderProductos(productos)
+// })
+
+
+// fetch
+
+// fetch (`../data.json`)
+// .then (response=> response.json())
+// .then (data => {
+//     console.log(data);
+//     productos(data)
+// })
+// .catch(err=>console.log(err))
+
