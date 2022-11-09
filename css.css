@@ -21,14 +21,15 @@ body {
 .navbar-logo {
     justify-self: start;
     margin-left: 20px;
-    color: red;
+    color: white;
     margin-top: 4vh;
     cursor: pointer;
 }
 
 .ver-carrito {
-    font-size: 28px;
-    margin: 30px 20px 0 0;
+    font-size: 25px;
+    margin-right: 20px;
+    margin-top: 3.5vh;
     cursor: pointer;
 }
 
@@ -38,7 +39,7 @@ body {
     background-size:cover;
     background-position: center;
     height: 100vh;
-    /* background-image: ; poner imagen */
+    background-image: url(./pasteleria.jpg)
 }
 
 .banner-container {
@@ -68,7 +69,7 @@ body {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    margin: 30px 80px ;
+    margin: 30px 80px 80px 0px ;
 }
 
 .card {
@@ -151,6 +152,7 @@ body {
     align-items: center;
     width: 70%;
     margin: 10px;
+    color: aliceblue;
 }
 
 .modal-container > div > img {
@@ -184,3 +186,8 @@ body {
     position: absolute;
     display: none;
 }
+
+.sumar .restar {
+    cursor: pointer;
+}
+

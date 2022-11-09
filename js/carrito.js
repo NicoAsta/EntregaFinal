@@ -1,6 +1,6 @@
 const pintarCarrito = () => {
-    modalContainer.innerHTML = ""
-    modalContainer.style.display= "flex"
+    modalContainer.innerHTML = "";
+    modalContainer.style.display= "flex";
     const modalHeader = document.createElement("div");
     modalHeader.className = "modal-header";
     modalHeader.innerHTML = `
@@ -24,32 +24,59 @@ const pintarCarrito = () => {
         let carritoContent = document.createElement("div");
     carritoContent.className = "modal-content";
     carritoContent.innerHTML = `
-        <img src ="${product.img}>
+        <img src="${product.img}>
         <h3>${product.nombre} </h3>
-        <p> ${product.precio}$ </p>
+        <p> ${product.precio} $ </p>
+        <span> class= "restar"> - </span>
         <p> Cantidad: ${product.cantidad} </p>
+        
         <p> Total: ${product.cantidad * product.precio} </p>
+
+        <button> comprar </button>
+
+        
         
     `;
+// No se por que no me deja agregar el span sumar 
+// <span> class= "sumar"> + </span>
 
     modalContainer.append(carritoContent);
 
+    // let restar = carritoContent.querySelector (".restar");
+
+    // restar.addEventListener("click",() => {
+    //     if (product.cantidad !== 1){
+    //     product.cantidad--;
+    //     }
+    //     saveLocal();
+    //     pintarCarrito();
+    // })
+
+
+    // let sumar = carritoContent.querySelector(".sumar");
+
+    // sumar.addEventListener("click", () => {
+    //     product.cantidad++;
+    //     saveLocal();
+    //     pintarCarrito();
+    // })
+
     let eliminar = document.createElement("span");
-    eliminar.innerText = "X";
-    eliminar.classList = "delete-product";
+    eliminar.innerText = "❌";
+    eliminar.className = "delete-product";
     carritoContent.append(eliminar);
 
         eliminar.addEventListener("click", eliminarProducto);
-});
+    });
 
 
    
-const total = carrito.reduce((acc, el) => acc + el.precio * el.cantidad, 0);
+    const total = carrito.reduce((acc, el) => acc + el.precio * el.cantidad, 0);
 
-const totalBuying = document.createElement("div")
-totalBuying.className = "total-content"
-totalBuying.innerHTML = `total a pagar: ${total}$`
-modalContainer.append(totalBuying);
+    const totalBuying = document.createElement("div")
+    totalBuying.className = "total-content"
+    totalBuying.innerHTML = `total a pagar: ${total}$`
+    modalContainer.append(totalBuying);
 };
 
 verCarrito.addEventListener("click", pintarCarrito);
@@ -76,3 +103,5 @@ const carritoCounter = () => {
 
     cantidadCarrito.innerText = JSON.parse(localStorage.getItem("carritoLength"));
 };
+
+carritoCounter ();
