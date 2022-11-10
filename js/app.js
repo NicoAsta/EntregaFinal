@@ -33,6 +33,7 @@ productos.forEach((product)=>{
     let comprar = document.createElement("button");
     comprar.innerText = "comprar";
     comprar.className = "comprar";
+    
 
     content.append(comprar);
 
@@ -66,48 +67,20 @@ productos.forEach((product)=>{
 
 });
 
-//Promesa
 
-// const hacerPedido = () => {
-//     return new Promise ((resolve, reject) => {
-        
-//             resolve(productos)
-//         }
-//     )
-// }
+const listado = document.getElementById("shopContent");
 
-// let productos = []
-// const renderProductos = (arr) => {
-//     let html;
-//     for (const item of arr) {
-//         const {id, img, nombre, precio, cantidad} = item;
+const listadoProductos = `../data.json`;
 
-//         html `<div class= "modal-content"
-//         <img src="${product.img}">
-//         <h3>${product.nombre} </h3>
-//         <p> ${product.precio} $ </p>
-//         <span class= "restar"> - </span>
-//         <p> Cantidad: ${product.cantidad} </p>
-//         <span class= "sumar"> + </span>
-//         <p> Total: ${product.cantidad * product.precio} </p>
-
-//         <button> comprar </button> </div>` 
-//     }
-// }
-
-// pedirProductos().then((res)=> {
-//     productos= res;
-//     renderProductos(productos)
-// })
-
-
-// fetch
-
-// fetch (`../data.json`)
-// .then (response=> response.json())
-// .then (data => {
-//     console.log(data);
-//     renderProductos (data);
-// })
-// .catch(err=>console.log(err))
-
+fetch(listadoProductos)
+    .then(respuesta => respuesta.json())
+    .then(datos => {
+        datos.forEach( producto => {
+            listado.innerHTML += `<h3>Nombre: ${producto.nombre} </h3>
+                                    <img src="${product.img}"
+                                    <strong class="price"> Precio: ${producto.precio} </strong>
+                                    <strong>ID: ${producto.id} </strong>`
+        })
+    })
+    .catch(error => console.log(error))
+    .finally(() => console.log("Proceso Finalizado"));

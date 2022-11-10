@@ -32,7 +32,7 @@ const pintarCarrito = () => {
         <span class= "sumar"> + </span>
         <p> Total: ${product.cantidad * product.precio} </p>
 
-        <button> comprar </button>
+        <button class="totaly"> comprar </button>
 
     `;
 
@@ -49,6 +49,18 @@ const pintarCarrito = () => {
         pintarCarrito();
     })
 
+
+    let totaly = carritoContent.querySelector (".totaly");
+
+    totaly.addEventListener("click",() => {
+        Swal.fire(
+            'Compra realizada',
+            'Gracias por comprar este producto',
+            'success'
+          )
+        saveLocal();
+        pintarCarrito();
+    })
 
     let sumar = carritoContent.querySelector(".sumar");
 
