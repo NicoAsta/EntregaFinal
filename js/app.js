@@ -4,6 +4,7 @@ const shopContent = document.getElementById("shopContent");
 const verCarrito = document.getElementById("verCarrito");
 const modalContainer = document.getElementById("modal-container");
 const cantidadCarrito = document.getElementById("cantidadCarrito");
+const agregarCarrito = document.getElementsByClassName("comprar")
 
 
 //get item + array
@@ -17,6 +18,32 @@ const saveLocal = () => {
 
 
 // codigo
+
+// Perdon Dani, con fetch no me funciona, nose como seguirlo desde aca estoy trabado y ya no me queda tiempo...:S
+// te lo dejo comentado, ya que el proyecto funciona sin el fetch.
+
+
+// const listado = document.getElementById("shopContent");
+
+// const listadoProductos = `../data.json`;
+
+// fetch(listadoProductos)
+//     .then(respuesta => respuesta.json())
+//     .then(datos => {
+//         datos.forEach( producto => {
+//             listado.innerHTML += `  <div class= "card">
+//                                     <h3> ${producto.nombre} </h3>
+//                                     <img src="${producto.img}"
+//                                     <strong class="price"> Precio: $${producto.precio} </strong>
+//                                     <button class= "comprar">comprar</button>
+//                                     </div>
+//                                     `
+//         })
+//     })
+//     .catch(error => console.log(error))
+//     .finally(() => console.log("Proceso Finalizado"));
+
+    
 
 productos.forEach((product)=>{
     let content = document.createElement("div");
@@ -68,19 +95,3 @@ productos.forEach((product)=>{
 });
 
 
-const listado = document.getElementById("shopContent");
-
-const listadoProductos = `../data.json`;
-
-fetch(listadoProductos)
-    .then(respuesta => respuesta.json())
-    .then(datos => {
-        datos.forEach( producto => {
-            listado.innerHTML += `<h3>Nombre: ${producto.nombre} </h3>
-                                    <img src="${product.img}"
-                                    <strong class="price"> Precio: ${producto.precio} </strong>
-                                    <strong>ID: ${producto.id} </strong>`
-        })
-    })
-    .catch(error => console.log(error))
-    .finally(() => console.log("Proceso Finalizado"));
